@@ -26,6 +26,7 @@ public class ShoppingCart {
 
     /**
      * Calculate total value with tax and shipment cost
+     * `total = (product_price*quantity)+(product_tax*quantity)+shipping_cost;`
      *
      * @return Net Total
      */
@@ -39,6 +40,11 @@ public class ShoppingCart {
         return total + this.getShipmentCost() + this.getVat();
     }
 
+    /**
+     * Calculate vat.
+     *
+     * @return total vat for the shopppin cart.
+     */
     public double getVat() {
         double vat = 0;
         for (Map.Entry<Product, Double> entry : productList.entrySet()) {
